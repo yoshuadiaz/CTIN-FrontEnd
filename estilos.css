@@ -1,0 +1,187 @@
+body{
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+header{
+}
+#listado nav{
+	text-align: center;
+}
+#listado nav select {
+	width: 90%;
+	margin: 10px;
+}
+#listado nav h3{
+	width:100%;
+	display: block;
+	margin: 0;
+}
+#miembros article{
+	max-width: 170px;
+	width: auto;
+	min-width: 150px;
+	margin: 5px;
+	background-color: rgb(35, 39, 44);
+	color: white;
+	text-align: center;
+	padding-bottom: 10px;
+	overflow: hidden;
+	border: 2px solid black;
+}
+#miembros article img {
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#miembros article:hover .info{
+	width: 100%;
+	height: 180px;
+	top: 0;
+	left: 0;
+}
+#miembros article h3{
+	margin-top: 7px;
+	padding: 0 10px;
+	margin-bottom: 0;
+	font-size: 30px;
+}
+#miembros article:hover img {
+	-webkit-filter: blur(5px);
+}
+#miembros article h4 {
+	font-size: 16px;
+	padding: 0 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #bbb;
+}
+#miembros figure{
+	width: 100%;
+	height: 170px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+#miembros figure img{
+	width: 100%;
+	height: auto;
+}
+#miembros .Hardware figure{
+	border-bottom: 10px solid rgb(160, 255, 0);
+}
+#miembros .info{
+	width: 101%;
+	height: 180px;
+	background-color: rgba(0,0,0,.3);
+	position: absolute;
+	display: table;
+	top: 180px;
+	left: 0;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#miembros .info p{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 10px;
+	text-shadow: 0 2px 3px black;
+}
+#miembros .Software figure{
+	border-bottom: 10px solid rgb(0, 150, 255);
+}
+#miembros .Social figure{
+	border-bottom: 10px solid rgb(255, 40, 0);
+}
+
+#miembros .ocultar{
+	opacity: 0.2;
+}
+#miembros .mostrar{
+	opacity: 1;
+	display: inline-block;
+}
+
+#Perfil,#admin,#equipo{
+	overflow: hidden;
+	padding-bottom: 40px;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: 800px;
+	background-repeat: no-repeat;
+}
+#Perfil h3{
+	font-size: 2em;
+	margin: 0 0 10px 0;
+}
+#contenidoGeneral #Perfil .texto{
+	background-color: #ccc;
+	padding: 10px;
+}
+.administrador{
+	text-align: center;
+}
+.administrador img{
+	max-width: 100%;
+}
+.contenidoSeccion {
+	overflow: hidden;
+	margin-top: 20px;
+}
+.equipoBar{
+	overflow: hidden;
+	background-color: #ccc;
+}
+.medio{
+	background-color: white;
+}
+#Perfil .texto{
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+#Perfil .texto h3{
+	-webkit-column-span:all;
+	-moz-column-span:all;
+	column-span:all;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	#Perfil .texto{
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	#Perfil .texto{
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	#Perfil .texto{
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+}
+
+.isotope-item {z-index: 2; } .isotope-hidden.isotope-item {pointer-events: none; z-index: 1; } .isotope, .isotope .isotope-item {/* change duration value to whatever you like */ -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -ms-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; } .isotope {-webkit-transition-property: height, width; -moz-transition-property: height, width; -ms-transition-property: height, width; -o-transition-property: height, width; transition-property: height, width; } .isotope .isotope-item {-webkit-transition-property: -webkit-transform, opacity; -moz-transition-property:    -moz-transform, opacity; -ms-transition-property:     -ms-transform, opacity; -o-transition-property:      -o-transform, opacity; transition-property:         transform, opacity; } /**** disabling Isotope CSS3 transitions ****/ .isotope.no-transition, .isotope.no-transition .isotope-item, .isotope .isotope-item.no-transition {-webkit-transition-duration: 0s; -moz-transition-duration: 0s; -ms-transition-duration: 0s; -o-transition-duration: 0s; transition-duration: 0s; }

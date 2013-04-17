@@ -1,0 +1,2 @@
+message = ->
+	alert "Hola Mundo"

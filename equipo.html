@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Equipo</title>
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet/less" href="css/reticula1.less" type="text/less">
+	<link rel="stylesheet" href="estilos.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src="js/less-1.1.3.min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/fittext.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script>
+		$(document).on("ready",inicio);
+		/*function filtrar(){
+			$('#miembros').isotope({ filter: '.Programador' });
+		};*/
+		
+		function inicio(){
+			filtrar();
+			$("#listado nav h3").fitText(0.4, {maxFontSize: '40px'});
+			$("#contenidoGeneral h2").fitText(0.4, {maxFontSize: '40px'});
+			$("#contenidoGeneral p").fitText(0.6, {maxFontSize: '18px'});
+			$(".equipoBar .menu li a").click(function(){
+				event.preventDefault();
+				var link = $(this).attr("href");
+				$.scrollTo(link, 800)
+			})
+		}
+		function filtrar(){
+			$('#miembros').isotope({masonryHorizontal: { rowHeight: 360 }  });
+			$("#TipoPerfil select, #Carrera select, #Generación select").change(function(){
+				//Areas de si es Software, Hardware o Social.
+				var perfil = $("#TipoPerfil select").val();
+				if (perfil !="todo"){
+					perfil = "."+perfil;
+				}
+				else{
+					perfil = "";
+				}
+				//Generación a la que pertenece.
+				var generacion = $("#Generación select").val();
+				if (generacion !="todo"){
+					generacion = "."+generacion;
+				}
+				else{
+					generacion = "";
+				}
+				//Carreras a la que pertenece.
+				var carrera = $("#Carrera select").val();
+				if (carrera !="todo"){
+					carrera = "."+carrera;
+				}
+				else{
+					carrera = "";
+				}
+
+				var filtro = perfil + carrera + generacion;
+				if (filtro.length == 0)
+				{
+					$('#miembros').isotope({ filter: "*" });
+				}
+				else{
+					$('#miembros').isotope({ filter: filtro });
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="contenidoHeader">
+				<article>
+					<img src="http://placehold.it/350x150">
+					<p>La Barra Lateral</p>
+				</article>
+			</div>
+			<div style="clear:both; visibility:hidden">CTIN México</div>
+		</header>
+		<section id="contenidoGeneral">
+			<section id="Perfil">
+				<nav class="equipoBar">
+				<h2>Equipo</h2>
+				<div class="menu">
+					<ul>
+						<li><a href="#Perfil">Perfil</a></li>
+						<li><a href="#admin">Administración</a></li>
+						<li><a href="#equipo">Miembros</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="texto">
+				<h3>Perfil:</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quasi ut earum dolorum dolor id voluptates laborum impedit vero libero. Voluptas, assumenda optio aliquid architecto esse molestiae non error labore!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eveniet iste inventore delectus reiciendis dolorem accusantium vitae facere consectetur harum quasi deserunt nobis assumenda perspiciatis rem tenetur natus. Voluptates, molestiae.</p>
+			</div>
+			</section>
+			<section id="admin">
+				<nav class="equipoBar">
+					<h2>Administración</h2>
+					<div class="menu">
+						<ul>
+							<li><a href="#Perfil">Perfil</a></li>
+							<li><a href="#admin">Administración</a></li>
+							<li><a href="#equipo">Miembros</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="contenidoSeccion">
+					<div id="adminTexto">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quasi ut earum dolorum dolor id voluptates laborum impedit vero libero. Voluptas, assumenda optio aliquid architecto esse molestiae non error labore!</p>
+					</div>
+					<div class="administrador">
+						<img src="http://placehold.it/350x350">
+						<h3>Cargo de la persona</h3>
+					</div>
+					<div class="administrador">
+						<img src="http://placehold.it/350x350">
+						<h3>Cargo de la persona</h3>
+					</div>
+					<div class="administrador">
+						<img src="http://placehold.it/350x350">
+						<h3>Cargo de la persona</h3>
+					</div>
+				</div><!--fin de Contenido Sección-->
+			</section>
+			<section id="equipo">
+				<nav class="equipoBar">
+					<h2>Equipo</h2>
+					<div class="menu">
+						<ul>
+							<li><a href="#Perfil">Perfil</a></li>
+							<li><a href="#admin">Administración</a></li>
+							<li><a href="#equipo">Miembros</a></li>
+						</ul>
+					</div>
+				</nav>
+				<section id="listado">
+					<nav>
+						<h3>Perfil</h3>
+						<form action="" id="TipoPerfil">
+							<select name="carlist">
+								<option value="todo">Todas las áreas</option>
+								<option value="Software">Software</option>
+								<option value="Hardware">Hardware</option>
+								<option value="Social">Social</option>
+							</select>
+						</form>
+					</nav>
+				
+					<nav class="medio">
+						<h3>Carrera</h3>
+							<form action="" id="Carrera">
+							<select>
+								<option value="todo">Todas las Carreras</option>
+								<option value="Diseñador">Diseñador</option>
+								<option value="Comunicólogo">Comunicólogo</option>
+								<option value="Mecatrónico">Mecatrónico</option>
+								<option value="Programador">Programador</option>
+							</select>
+						</form>
+					</nav>
+				
+					<nav>
+						<h3>Generación</h3>
+						<form action="" id="Generación">
+							<select name="Genlist">
+								<option value="todo">Todas las Generaciones</option>
+								<option value="Primavera-2013">Primavera 2013</option>
+								<option value="Verano-2013">Verano 2013</option>
+								<option value="Otoño-2012">Otoño 2012</option>
+							</select>
+						</form>
+					</nav>
+				</section>
+				
+				<section id="miembros">
+					<article class="Software Programador Otoño-2012" data-perfil="Software">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Man versión modelo</h3>
+						<h4>Ingeniero  Informática</h4>
+					</article>
+				
+					<article class="Hardware Mecatrónico Otoño-2012" data-perfil="Hardware">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre muylargo</h3>
+						<h4>Ingeniero  Mecatrónico</h4>
+					</article>
+				
+					<article class="Social Diseñador Otoño-2012" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo lele</h3>
+						<h4>Diseñador</h4>
+					</article>
+				
+					<article class="Social Comunicólogo Primavera-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo lele</h3>
+						<h4>Comunicólogo</h4>
+					</article>
+				
+					<article class="Software Programador Primavera-2013" data-perfil="Software">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre</h3>
+						<h4>Ingeniero Informática</h4>
+					</article>
+				
+					<article class="Hardware Mecatrónico Verano-2013" data-perfil="Hardware">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre muylargo</h3>
+						<h4>Ingeniero  Mecatrónico</h4>
+					</article>
+				
+					<article class="Social Diseñador Verano-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Diseñador</h4>
+					</article>
+				
+					<article class="Social Comunicólogo Verano-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Comunicólogo</h4>
+					</article>
+				
+					<article class="Software Programador Primavera-2013" data-perfil="Software">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre</h3>
+						<h4>Ingeniero Informática</h4>
+					</article>
+				
+					<article class="Hardware Mecatrónico Primavera-2013" data-perfil="Hardware">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre muylargo</h3>
+						<h4>Ingeniero  Mecatrónico</h4>
+					</article>
+				
+					<article class="Social Diseñador Primavera-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Diseñador</h4>
+					</article>
+				
+					<article class="Social Comunicólogo Primavera-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Comunicólogo</h4>
+					</article>
+				
+					<article class="Software Programador Primavera-2013" data-perfil="Software">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre</h3>
+						<h4>Ingeniero  Informática</h4>
+					</article>
+				
+					<article class="Hardware Mecatrónico Otoño-2012" data-perfil="Hardware">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre muylargo</h3>
+						<h4>Ingeniero  Mecatrónico</h4>
+					</article>
+				
+					<article class="Social Diseñador Otoño-2012" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Diseñador</h4>
+					</article>
+				
+					<article class="Social Comunicólogo Otoño-2012" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Comunicólogo</h4>
+					</article>
+				
+					<article class="Software Programador Otoño-2012" data-perfil="Software">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre</h3>
+						<h4>Ingeniero  Informática</h4>
+					</article>
+				
+					<article class="Hardware Mecatrónico Otoño-2012" data-perfil="Hardware">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombre muylargo</h3>
+						<h4>Ingeniero  Mecatrónico</h4>
+					</article>
+				
+					<article class="Social Diseñador Verano-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Diseñador</h4>
+					</article>
+				
+					<article class="Social Comunicólogo Verano-2013" data-perfil="Social">
+						<figure>
+							<img src="http://images.fineartamerica.com/images-medium-large/portrait-of-a-woman-wearing-jewellery-oleksiy-maksymenko.jpg" alt="">
+							<div class="info">
+								<p>
+									#amigable #cordial #descidido #responsable #comprometido #sexy
+								</p>
+							</div>
+						</figure>
+						<h3>Nombrelargo jajaja lele</h3>
+						<h4>Comunicólogo</h4>
+					</article>
+				
+				
+				</section>
+			</section><!--Fin del Equipo-->
+
+		</section><!-- Fin del contenido General
+
+
+
+
+
+	</div>
+
+
+
+	<section id="listado">
+		<nav>
+			<form action="" id="TipoPerfil">
+				<select name="carlist" form="carform">
+					<option value="todo">Todas las áreas</option>
+					<option value="Software">Software</option>
+					<option value="Hardware">Hardware</option>
+					<option value="Social">Social</option>
+				</select>
+			</form>
+		</nav>
+		<nav>
+			<form action="" id="buscar"></form>
+		</nav>
+		<nav>
+			<form action="" id="Carrera">
+				<form action="" id="Carrera">
+				<select>
+					<option value="todo">Todas las Carreras</option>
+					<option value="Diseñador">Diseñador</option>
+					<option value="Comunicólogo">Comunicólogo</option>
+					<option value="Mecatrónico">Mecatrónico</option>
+					<option value="Programador">Programador</option>
+				</select>
+			</form>
+			</form>
+		</nav>
+	</section>
+
+
+	
+</body>
+</html>

@@ -1,0 +1,192 @@
+@import 'grid.less';
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+@total-width: 100%;
+
+#adminTexto{
+	.column(3);
+}
+.administrador{
+	.column(3);
+}
+.equipoBar h2{
+	.column(3);
+}
+.equipoBar .menu{
+	.column(9);
+	text-align: right;
+}
+.equipoBar .menu li{
+	display: inline-block;
+}
+.equipoBar .menu ul{
+	padding: 0;
+}
+#miembros{
+	.column(12);
+}
+#listado{
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	overflow: hidden;
+	background-color: #ccc;
+	margin-bottom: 20px;
+
+	nav{
+		.column(4);
+		display: inline-block;
+	}
+}
+#wrap{
+	margin: 0 auto;
+	clear: both;
+	overflow: hidden;
+}
+#wrap header{
+	.column(2);
+}
+#wrap header #contenidoHeader {
+	.column(2);
+	position: fixed;
+	margin: 0 0 0 -12px;
+	height: 100%;
+	background: rgb(40,40,40);
+	border-right: 10px solid #ddd;
+	box-shadow: 4px 0 10px rgba(0,0,0,.5);
+}
+#wrap header #contenidoHeader article{
+	margin: 0 5px;
+	color: white;
+}
+#wrap #contenidoGeneral{
+	.column(10);
+	display: inline;
+}
+#Perfil .texto{
+	max-width: 650px;
+	margin: 40px auto;
+}
+/* Large desktop */
+@media (min-width: 1200px) { 
+	#wrap header{
+		.column(2);
+	}
+	#wrap #contenidoGeneral{
+		.column(10);
+		display: inline;
+	}
+	#wrap header #contenidoHeader {
+		.column(2);
+		position: fixed;
+		margin: 0 0 0 -20px;
+		height: 100%;
+		background: rgb(40,40,40);
+	}
+	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	#adminTexto{
+		.column(12);
+	}
+	.administrador{
+		.column(4);
+	}
+	.administrador img{
+		width: 100%;
+	}
+	.equipoBar h2{
+		.column(12);
+		text-align: center;
+	}
+	.equipoBar .menu{
+		.column(12);
+		text-align: center;
+	}
+	
+	#wrap header{
+		.column(2);
+	}
+	#wrap header #contenidoHeader {
+		.column(2);
+		position: fixed;
+		margin: 0 0 0 -12px;
+		height: 100%;
+		background: rgb(40,40,40);
+	}
+	#wrap #contenidoGeneral{
+		.column(10);
+		display: inline;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+	#adminTexto{
+		.column(12);
+	}
+	.administrador{
+		.column(4);
+	}
+	.administrador img{
+		width: 100%;
+	}
+	.equipoBar h2{
+		.column(12);
+		text-align: center;
+	}
+	.equipoBar .menu{
+		.column(12);
+		text-align: center;
+	}
+	
+	#wrap header{
+		.column(2);
+	}
+	#wrap header #contenidoHeader {
+		.column(2);
+		position: fixed;
+		margin: 0 0 0 -10px;
+		height: 100%;
+		background: rgb(40,40,40);
+	}
+	#wrap #contenidoGeneral{
+		.column(10);
+		display: inline;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	#adminTexto{
+		.column(12);
+	}
+	.administrador{
+		.column(12);
+	}
+	.administrador img{
+		width: 100%;
+	}
+	.equipoBar h2{
+		.column(12);
+		text-align: center;
+	}
+	.equipoBar .menu{
+		.column(12);
+		text-align: center;
+	}
+	#wrap header{
+		.column(12);
+	}
+	#wrap header #contenidoHeader {
+		.column(12);
+		position: relative;
+		border: 0px solid;
+	}
+	#wrap #contenidoGeneral{
+		.column(12);
+		display: inline;
+	}
+}
