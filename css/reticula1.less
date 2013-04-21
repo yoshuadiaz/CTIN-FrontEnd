@@ -4,9 +4,6 @@
 @columns: 12;
 @total-width: 100%;
 
-#adminTexto{
-	.column(3);
-}
 .administrador{
 	.column(3);
 }
@@ -22,6 +19,24 @@
 }
 .equipoBar .menu ul{
 	padding: 0;
+}
+#adminTexto{
+	.column(3);
+}
+#comentarios article{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid;
+}
+#comentarios h4{
+	padding: 0 20px;
+}
+#myCarousel{
+	.column(10);
+	.push(1);
+}
+#myCarousel a {
+	text-decoration: none;
 }
 #miembros{
 	.column(12);
@@ -50,25 +65,93 @@
 	max-width: 650px;
 	margin: 40px auto;
 }
-#proyectosFiltro{
-	padding:10px 0;
-	overflow: hidden;
-	clear: both;
-	display: block;
+#pieArticulo #equipoTrabajo{
+	.column(8);
+	ul{
+		.row(6);
+		padding: 10px;
+		li{
+			.column(1.85,6);
+		}
+	}
 }
-#proyectosFiltro input{
+#pieArticulo #contacto{
+	.column(4);
+	ul{
+		.row(3);
+		padding: 0;
+		padding-left: 7px;
+		li{
+			.column(1,3);
+		}
+	}
+}
+#listadoMataderos .principal {
+	background-color: #000;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+#listadoMataderos .principal article{
+	.column(8);
+	.push(2);
+}
+#listadoMataderos .principal article img{
+	width: 100%;
+}
+#listadoMataderos .secundarios {
+	.row(12);
+	article{
+		.column(4,12);
+	}
+}
+#listadoMataderos .secundarios a{
+	text-decoration: none;
+}
+#listadoMataderos .primarios a{
+	text-decoration: none;
+	color: white;
+}
+#listadoMataderos .secundarios article .tituloSeccion {
+	height: 50px;
+}
+#proyectosBar input{
 	width: 100%;
 }
 
-#proyectosFiltro nav{
+#proyectosBar nav{
 	.column(6);
 }
-#proyectosFiltro select{
+#proyectosBar select{
 	width:100%;
 }
-#sliderProyecto{
+#proyectosDesarrollo article{
+	.column(5);
+	.push(6);
+}
+#proyectoSingle #descripcionProyecto{
+	.column(8);
+}
+#proyectoSingle #lateral #botones{
 	.column(12);
-	clear: both;
+}
+#proyectoSingle #lateral #Observaciones {
+	margin: 3px;
+	padding: 0 10px;
+	overflow: hidden;
+	background: #ccc;
+	border-radius: 5px;
+	padding-bottom: 20px;
+}
+#proyectoSingle #descripcionProyecto article{
+	padding: 10px;
+}
+#proyectoSingle #lateral{
+	.column(4);
+	margin-top: 15px;
+}
+#videoMatadero {
+background: black;
+text-align: center;
 }
 #wrap header{
 	width: 200px;
@@ -80,7 +163,7 @@
 	position: fixed;
 	height: 100%;
 	background: rgb(40,40,40);
-	border-right: 10px solid #ddd;
+	border-right: 10px solid #fff;
 	box-shadow: 4px 0 10px rgba(0,0,0,.5);
 }
 #wrap header #contenidoHeader article{
@@ -93,9 +176,29 @@
 #wrap #contenidoGeneral{
 	overflow: hidden;
 }
-
+#contenidoGeneral #tiposProyectos article{
+	.column(6);
+}
+#contenidoGeneral #tiposProyectos{
+	.column(8);
+	.push(2);
+	padding-bottom: 50px;
+}
+#contenidoGeneral #tiposProyectos .tituloSeccion{
+	text-align: center;
+}
 /* Large desktop */
 @media (min-width: 1200px) { 
+	#listadoMataderos .secundarios {
+		.row(12);
+		article{
+			.column(4,12);
+		}
+	}
+	#myCarousel{
+		.column(8);
+		.push(2);
+	}
 	#wrap header{
 	width: 200px;
 	display: block;
@@ -113,7 +216,7 @@
 		position: fixed;
 		height: 100%;
 		background: rgb(40,40,40);
-		border-right: 10px solid #ddd;
+		border-right: 10px solid #fff;
 		box-shadow: 4px 0 10px rgba(0,0,0,.5);
 	}
 }
@@ -137,6 +240,25 @@
 		.column(12);
 		text-align: center;
 	}
+	#contenidoGeneral #tiposProyectos{
+		.column(8);
+		.push(2);
+		padding-bottom: 50px;
+	}
+	#myCarousel{
+		.column(10);
+		.push(1);
+	}
+	#listadoMataderos .secundarios {
+		.row(12);
+		article{
+			.column(6,12);
+		}
+	}
+	#proyectosDesarrollo article{
+		.column(8);
+		.push(2);
+	}
 	#wrap header{
 		width: 100px;
 		display: block;
@@ -154,7 +276,7 @@
 		position: fixed;
 		height: 100%;
 		background: rgb(40,40,40);
-		border-right: 10px solid #ddd;
+		border-right: 10px solid #fff;
 		box-shadow: 4px 0 10px rgba(0,0,0,.5);
 	}
 	
@@ -179,6 +301,54 @@
 		.column(12);
 		text-align: center;
 	}
+	#contenidoGeneral #tiposProyectos{
+		.column(10);
+		.push(1);
+		padding-bottom: 50px;
+	}
+	#myCarousel{
+		.column(10);
+		.push(1);
+	}
+	#listadoMataderos .secundarios {
+		.row(12);
+		article{
+			.column(6,12);
+		}
+	}
+	#proyectosDesarrollo article{
+		.column(10);
+		.push(1);
+	}
+	#proyectoSingle #lateral{
+		.column(12);
+		border-top: 1px solid;
+		padding-top: 20px;
+	}
+	#proyectoSingle #descripcionProyecto{
+		.column(12);
+	}
+	#proyectoSingle #pieArticulo #equipoTrabajo{
+		.column(12);
+		ul{
+			.row(6);
+			padding: 10px;
+			li{
+				.column(1.85,6);
+			}
+		}
+	}
+	#proyectoSingle #pieArticulo #contacto{
+		.column(12);
+		ul{
+			.row(3);
+			padding: 0;
+			padding-left: 7px;
+			li{
+				.column(1,3);
+			}
+		}
+	}
 	#wrap header{
 		width: 100px;
 		display: block;
@@ -196,7 +366,7 @@
 		position: fixed;
 		height: 100%;
 		background: rgb(40,40,40);
-		border-right: 10px solid #ddd;
+		border-right: 10px solid #fff;
 		box-shadow: 4px 0 10px rgba(0,0,0,.5);
 	}
 	
@@ -221,6 +391,28 @@
 		.column(12);
 		text-align: center;
 	}
+	#contenidoGeneral #tiposProyectos{
+		.column(12);
+		padding-bottom: 50px;
+	}
+	#myCarousel{
+		.column(12);
+	}
+	#listadoMataderos .secundarios {
+		.row(12);
+		article{
+			.column(6,12);
+		}
+	}
+	#proyectoSingle #descripcionProyecto{
+		.column(12);
+	}
+	#proyectoSingle #lateral{
+		.column(12);
+	}
+	#sliderProyecto{
+		padding: 0 10px;
+	}
 	#wrap header{
 	width: 100%;
 	display: block;
@@ -241,7 +433,7 @@
 		width:100%;
 		position: relative;
 		background: rgb(40,40,40);
-		border-right: 10px solid #ddd;
+		border-right: 10px solid #fff;
 		box-shadow: 4px 0 10px rgba(0,0,0,.5);
 	}
 	

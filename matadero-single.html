@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proyectos en el Mercado</title>
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet/less" href="css/reticula1.less" type="text/less">
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src="js/less-1.1.3.min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/fittext.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script>
+		$(document).on("ready",inicio);
+		function inicio(){
+			filtrar();
+			$('#myCarousel').carousel()
+			$(".tituloSeccion").fitText(1, {maxFontSize: '40px',minFontSize:'20px'});
+			$(".equipoBar .menu li a").click(function(){
+				event.preventDefault();
+				var link = $(this).attr("href");
+				$.scrollTo(link, 800)
+			})
+		}
+		function filtrar(){
+
+			$('#listadoProyectos').isotope({ layoutMode : 'fitRows', filter:"*" });
+
+			$("#categoriasFiltro select").change(function(){
+				//Categoría del Proyecto.
+				var categoria = $("#categoriasFiltro select").val();
+				if (categoria !="todo"){
+					categoria = "."+categoria;
+				}
+				else{
+					categoria = "";
+				}
+
+				var filtro = categoria;
+				if (filtro.length == 0)
+				{
+					$('#listadoProyectos').isotope({ filter: "*" });
+				}
+				else{
+					$('#listadoProyectos').isotope({ filter: filtro });
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="contenidoHeader">
+				<article>
+					<h1><span class="ocultar">Centro de Tecnología e Inovación</span>
+						<img src="img/logo.png">
+					</h1>
+					<p>La Barra Lateral</p>
+				</article>
+			</div><!--Fin del contenido del header-->
+			<div style="clear:both; visibility:hidden">CTIN México</div>
+		</header>
+
+		<section id="contenidoGeneral">
+			<h2 id="titulo" class="tituloSeccion">Matadero</h2>
+
+			
+			<section id="proyectosBar">
+				<nav id="buscadorFiltro">
+					<h3 class="tituloSeccion">Buscar</h3>
+					<form id="buscadorFiltro">
+						<input type="text" placeholder="Buscar">
+					</form>
+				</nav>
+				<nav>
+					<h3 class="tituloSeccion">Secciones</h3>
+					<form id="seccionesFiltro">
+						<select name="Genlist">
+							<option value="todo">Todas las Secciones</option>
+							<option value="Educación">Educación</option>
+							<option value="Salud">Salud</option>
+							<option value="Seguridad">Seguridad</option>
+						</select>
+					</form>
+				</nav>
+				
+			</section><!-- Fin de Proyectos Filtro-->
+
+			<section id="mataderoSingle">
+				<h2 class="tituloSeccion">Titulo a una linea del Matadero</h2>
+				<div id="videoMatadero">
+					<img src="http://placehold.it/720x480" alt="">
+				</div><!--fin del videoMatadero-->
+				<div id="comentarios">
+					<h4 class="tituloSeccion">Comentarios:</h4>
+					<article>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, inventore, laboriosam, fugiat, excepturi ut nihil praesentium dicta corporis optio velit odit aut minus laborum consequuntur dolorem eos unde. Minima, velit?</p>
+					</article>
+					<article>
+						<p>Laudantium, cum ea tempora esse beatae consectetur provident nemo velit obcaecati saepe perferendis ut unde in cupiditate sunt quod soluta rem totam tenetur quaerat molestiae similique error natus accusamus incidunt.</p>
+					</article>
+					<article>
+						<p>Rem, quibusdam, expedita eos similique facere alias ex recusandae perferendis commodi amet laboriosam a quam neque vitae aliquid sequi voluptatem? Libero sequi nesciunt dolorum eaque officiis voluptate magni ipsa cum.</p>
+					</article>
+					<article>
+						<p>Ab, doloremque aperiam quis eaque temporibus minima fugit distinctio atque quia officia! Incidunt, pariatur, quas, eveniet aperiam corporis nisi modi harum ea voluptatibus sint maxime eligendi minus impedit consectetur animi?</p>
+					</article>
+					<article>
+						<p>Ea, magnam, perspiciatis, quibusdam est reiciendis tempore accusamus natus aliquid officiis laborum voluptate veniam rerum explicabo animi ipsam saepe optio placeat quidem sequi totam molestiae voluptatum sed eum. Excepturi, eius!</p>
+					</article>
+					<article>
+						<p>Aperiam, ut hic tenetur repellendus. Illo, accusamus, nostrum tempore libero ut ab aliquid amet ipsa cumque id. Necessitatibus, ex, quos, delectus laboriosam quam sed asperiores iusto unde accusamus eveniet hic.</p>
+					</article>
+				</div>
+			</section><!-- Fin -->
+		</section><!-- Fin del contenido General-->
+
+	</div><!-- Fin del Wrap -->
+
+	
+</body>
+</html>

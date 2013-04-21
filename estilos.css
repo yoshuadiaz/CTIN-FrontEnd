@@ -1,21 +1,55 @@
 body{
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-	background-color: rgb(0, 204, 255);
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 header{
 }
+html{
+	background-color: #aaa;
+}
 img{
 	max-width: 100%;
 }
 #contenidoGeneral {
 	max-width: 1170px;
-	padding: 0 20px;
 	margin: 0 auto;
 	background-color: rgb(252, 252, 252);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+	-webkit-animation: contenGenAnim 1s ease;
+	-moz-animation: contenGenAnim 1s ease;
+	-ms-animation: contenGenAnim 1s ease;
+	-o-animation: contenGenAnim 1s ease;
+	animation: contenGenAnim 1s ease;
+}
+@-webkit-keyframes contenGenAnim{
+	0%{
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		opacity: 0;
+		-webkit-transform: translate(0,-10%);
+		-moz-transform: translate(0,-10%);
+		-o-transform: translate(0,-10%);
+		-ms-transform: translate(0,-10%);
+		transform: translate(0,-10%);
+	}
+	100%{
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		opacity: 1;
+		-webkit-transform: translate(0);
+		-moz-transform: translate(0);
+		-o-transform: translate(0);
+		-ms-transform: translate(0);
+		transform: translate(0);
+	}
+}
+.tituloSeccion{
+	margin: 0.1em 0 .3em 0;
 }
 #listado nav{
 	text-align: center;
@@ -34,6 +68,12 @@ img{
 }
 #listadoProyectos .Elemento{
 	margin-bottom: 20px;
+}
+#mataderoSingle .tituloSeccion{
+	text-align: center;
+}
+#myCarousel a {
+	text-decoration: none;
 }
 #miembros article{
 	max-width: 170px;
@@ -124,7 +164,24 @@ img{
 	opacity: 1;
 	display: inline-block;
 }
-
+#lateral article {
+	background: #aaa;
+}
+#listadoMataderos {
+	margin: 20px;
+	text-align: center;
+}
+#listadoMataderos .principal a{
+	text-decoration: none;
+	color:#ccc;
+}
+#listadoMataderos .principal article{
+	padding-top: 30px;
+}
+#listadoMataderos .secundarios a{
+	text-decoration: none;
+	color:#333;
+}
 #Perfil,#admin,#equipo{
 	overflow: hidden;
 	padding-bottom: 40px;
@@ -133,13 +190,42 @@ img{
 	min-height: 800px;
 	background-repeat: no-repeat;
 }
-#Perfil h3{
+#Perfil h3, #pieArticulo h3{
 	font-size: 2em;
 	margin: 0 0 10px 0;
+}
+#pieArticulo div:nth-child(1) {
+	overflow: hidden;
+	border-right: 1px solid;
+}
+#pieArticulo #contacto {
+	margin-left: -1px!important;
+	margin-bottom: 40px!important;
+}
+#proyectoSingle #lateral #Observaciones article{
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#proyectoSingle #lateral #Observaciones article p{
+	margin: 0;
+}
+#proyectoSingle #lateral #Observaciones article span{
+	padding: 10px;
+	font-size: .7em;
+	display: inline-block;
+	text-align: right;
+	width: 90%;
 }
 #contenidoGeneral #Perfil .texto{
 	background-color: #ccc;
 	padding: 10px;
+}
+#contenidoGeneral #tiposProyectos figure a {
+color: black;
+text-decoration: none;
+}
+#contenidoGeneral #tiposProyectos article{
+	text-align: center;
 }
 .administrador{
 	text-align: center;
@@ -154,6 +240,21 @@ img{
 .equipoBar{
 	overflow: hidden;
 	background-color: #ccc;
+	padding: 10px 0;
+}
+.equipoBar .menu ul li a {
+	color: white;
+	background: #333;
+	padding: 10px;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.equipoBar .menu ul li:hover a {
+	background: rgb(0, 133, 255);
 }
 .leyenda{
 	position: absolute;
@@ -179,6 +280,10 @@ img{
 .medio{
 	background-color: white;
 }
+
+.ocultar{
+	display: none;
+}
 #Perfil .texto{
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
@@ -189,10 +294,68 @@ img{
 	-moz-column-span:all;
 	column-span:all;
 }
-
+#pieArticulo #equipoTrabajo ul li{
+	text-align: center;
+	display: inline-block;
+}
+#pieArticulo #equipoTrabajo ul li h4 {
+	margin: 5px 0 15px 0;
+	height: 40px;
+}
+#proyectosBar{
+	background-color: #ccc;
+	margin-bottom: 10px;
+	overflow: hidden;
+	clear: both;
+	display: block;
+	border: 1 solid black;
+	box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+#proyectosBar nav {
+	padding: 20px 0;
+	text-align: center;
+}
+#proyectosBar nav:nth-child(2) {
+	border-left: 1px solid;
+	margin-left: -1px;
+}
+#proyectosBar form {
+	padding: 0 20px;
+	display: block;
+}
+#proyectosDesarrollo h2{
+	text-align: center;
+}
+#proyectosDesarrollo #proyDescr {
+	overflow: hidden;
+	padding-bottom: 150px;
+	background-attachment: fixed;
+	background-size: cover;
+}
+#proyectosDesarrollo #proyDescr article{
+	background-color: #ccc;
+}
+#proyectosDesarrollo #proyDescr article p{
+	padding: 0 10px;
+}
+#proyectoSingle #lateral #botones{
+	padding: 0;
+	list-style-type:none; 
+}
+#proyectoSingle #lateral #botones li img{
+	width: 100%;
+}
+#sliderProyecto{
+	clear: both;
+	overflow: hidden;
+	background-color: black;
+}
 #sliderProyecto ul{
 	list-style-type: none;
 	padding: 20px;
+}
+#titulo{
+	text-align: center;
 }
 /* Large desktop */
 @media (min-width: 1200px) {
@@ -208,26 +371,53 @@ img{
 		-moz-column-count: 2;
 		column-count: 2;
 	}
+	#pieArticulo div:nth-child(1) {
+		overflow: hidden;
+		border-right: 0px;
+		border-right: 1px solid black;
+	}
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+	.Elemento .leyenda h3{
+		margin: 20px 20px;
+		height: auto;
+	}
 	#Perfil .texto{
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
 		column-count: 1;
 	}
+	#pieArticulo div:nth-child(1) {
+		overflow: hidden;
+		border-right: 0px;
+		border-bottom: 1px solid black;
+	}
+	#proyectoSingle #descripcionProyecto {
+		border-right: 0px;
+	}
+
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	#contenidoGeneral {
+		padding: 0;
+		-webkit-animation: emp;
+		-moz-animation: emp;
+		-ms-animation: emp;
+		-o-animation: emp;
+		animation: emp;
+	}
+	.Elemento .leyenda h3{
+		margin: 20px 20px;
+		height: auto;
+	}
 	#Perfil .texto{
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
 		column-count: 1;
-	}
-	#contenidoGeneral {
-		padding: 0;
 	}
 }
 
