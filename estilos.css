@@ -10,6 +10,11 @@ header{
 img{
 	max-width: 100%;
 }
+#contenidoGeneral {
+	max-width: 1170px;
+	padding-left: 20px;
+	margin: 0 auto;
+}
 #listado nav{
 	text-align: center;
 }
@@ -21,6 +26,9 @@ img{
 	width:100%;
 	display: block;
 	margin: 0;
+}
+#listadoProyectos{
+	clear: both;
 }
 #listadoProyectos .Elemento{
 	margin-bottom: 20px;
