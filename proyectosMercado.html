@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proyectos en el Mercado</title>
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet/less" href="css/reticula1.less" type="text/less">
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="css/flexslider.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src="js/less-1.1.3.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/fittext.js"></script>
+
+	<script>
+		$(document).on("ready",inicio);
+		function inicio(){
+			//filtrar();
+			$('#slider').flexslider({
+				controlNav: true,
+				directionNav: true,
+			});
+			$("#listado nav h3").fitText(0.4, {maxFontSize: '40px'});
+			$("#contenidoGeneral h2").fitText(0.4, {maxFontSize: '40px'});
+			$("#contenidoGeneral p").fitText(0.6, {maxFontSize: '18px'});
+			$(".equipoBar .menu li a").click(function(){
+				event.preventDefault();
+				var link = $(this).attr("href");
+				$.scrollTo(link, 800)
+			})
+		}
+		function filtrar(){
+
+			$('#listadoProyectos').isotope({ layoutMode : 'fitRows', filter:"*" });
+			$("#TipoPerfil select, #Carrera select, #Generación select").change(function(){
+				//Areas de si es Software, Hardware o Social.
+				var perfil = $("#TipoPerfil select").val();
+				if (perfil !="todo"){
+					perfil = "."+perfil;
+				}
+				else{
+					perfil = "";
+				}
+				//Generación a la que pertenece.
+				var generacion = $("#Generación select").val();
+				if (generacion !="todo"){
+					generacion = "."+generacion;
+				}
+				else{
+					generacion = "";
+				}
+				//Carreras a la que pertenece.
+				var carrera = $("#Carrera select").val();
+				if (carrera !="todo"){
+					carrera = "."+carrera;
+				}
+				else{
+					carrera = "";
+				}
+
+				var filtro = perfil + carrera + generacion;
+				if (filtro.length == 0)
+				{
+					$('#miembros').isotope({ filter: "*" });
+				}
+				else{
+					$('#miembros').isotope({ filter: filtro });
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="contenidoHeader">
+				<article>
+					<img src="http://placehold.it/350x150">
+					<p>La Barra Lateral</p>
+				</article>
+			</div><!--Fin del contenido del header-->h
+			<div style="clear:both; visibility:hidden">CTIN México</div>
+		</header>
+
+		<section id="contenidoGeneral">
+			<h2>Proyectos en el Mercado</h2>
+
+			<section id="sliderProyecto">
+				<div id="slider">
+					<ul class="slides">
+						<li><a href=""><span class="ocultar"></span><img src="http://placehold.it/1280x720/00ff00/ffffff" alt=""></a></li>
+						<li><a href=""><span class="ocultar"></span><img src="http://placehold.it/1280x720/880000/ffffff" alt=""></a></li>
+						<li><a href=""><span class="ocultar"></span><img src="http://placehold.it/1280x720/0000ff/ffffff" alt=""></a></li>
+						<li><a href=""><span class="ocultar"></span><img src="http://placehold.it/1280x720/88ff00/ffffff" alt=""></a></li>
+						<li><a href=""><span class="ocultar"></span><img src="http://placehold.it/1280x720/ff8800/ffffff" alt=""></a></li>
+					</ul>
+				</div>
+			</section>
+			
+			<section id="proyectosFiltro">
+				<nav>
+					<form id="categoriasFiltro">
+						<select name="Genlist">
+							<option value="todo">Todas las Categorias</option>
+							<option value="Educación">Educación</option>
+							<option value="Salud">Salud</option>
+							<option value="Seguridad">Seguridad</option>
+						</select>
+					</form>
+				</nav>
+				<nav id="buscadorFiltro">
+					<form id="buscadorFiltro">
+						<input type="text" placeholder="Buscar">
+						<input type="submit">
+					</form>
+				</nav>
+			</section><!-- Fin de Proyectos Filtro-->
+
+			<section id="listadoProyectos">
+				<figure class="Elemento Educación">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Salud">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Seguridad">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+				<figure class="Elemento Educación">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Salud">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Seguridad">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+				<figure class="Elemento Educación">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Salud">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Seguridad">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+				<figure class="Elemento Educación">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Salud">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+				<figure class="Elemento Seguridad">
+					<img src="http://placehold.it/350x350">
+					<div class="leyenda">
+						<p>Lorem ipsum</p>
+					</div>
+				</figure>
+
+			</section><!-- Fin -->
+		</section><!-- Fin del contenido General-->
+
+	</div><!-- Fin del Wrap -->
+
+	
+</body>
+</html>
