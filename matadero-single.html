@@ -20,7 +20,7 @@
 		$(document).on("ready",inicio);
 		function inicio(){
 			filtrar();
-			$('#myCarousel').carousel()
+			$("#titulo").fitText(.8, {maxFontSize: '80px',minFontSize:'20px'});
 			$(".tituloSeccion").fitText(1, {maxFontSize: '40px',minFontSize:'20px'});
 			$(".equipoBar .menu li a").click(function(){
 				event.preventDefault();
@@ -95,31 +95,29 @@
 
 			<section id="mataderoSingle">
 				<h2 class="tituloSeccion">Titulo a una linea del Matadero</h2>
-				<div id="videoMatadero">
-					<img src="http://placehold.it/720x480" alt="">
-				</div><!--fin del videoMatadero-->
-				<div id="comentarios">
-					<h4 class="tituloSeccion">Comentarios:</h4>
-					<article>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, inventore, laboriosam, fugiat, excepturi ut nihil praesentium dicta corporis optio velit odit aut minus laborum consequuntur dolorem eos unde. Minima, velit?</p>
-					</article>
-					<article>
-						<p>Laudantium, cum ea tempora esse beatae consectetur provident nemo velit obcaecati saepe perferendis ut unde in cupiditate sunt quod soluta rem totam tenetur quaerat molestiae similique error natus accusamus incidunt.</p>
-					</article>
-					<article>
-						<p>Rem, quibusdam, expedita eos similique facere alias ex recusandae perferendis commodi amet laboriosam a quam neque vitae aliquid sequi voluptatem? Libero sequi nesciunt dolorum eaque officiis voluptate magni ipsa cum.</p>
-					</article>
-					<article>
-						<p>Ab, doloremque aperiam quis eaque temporibus minima fugit distinctio atque quia officia! Incidunt, pariatur, quas, eveniet aperiam corporis nisi modi harum ea voluptatibus sint maxime eligendi minus impedit consectetur animi?</p>
-					</article>
-					<article>
-						<p>Ea, magnam, perspiciatis, quibusdam est reiciendis tempore accusamus natus aliquid officiis laborum voluptate veniam rerum explicabo animi ipsam saepe optio placeat quidem sequi totam molestiae voluptatum sed eum. Excepturi, eius!</p>
-					</article>
-					<article>
-						<p>Aperiam, ut hic tenetur repellendus. Illo, accusamus, nostrum tempore libero ut ab aliquid amet ipsa cumque id. Necessitatibus, ex, quos, delectus laboriosam quam sed asperiores iusto unde accusamus eveniet hic.</p>
-					</article>
-				</div>
-			</section><!-- Fin -->
+				<section id="videoMatadero">
+					<iframe width="720" height="480" src="http://www.youtube.com/embed/4hpEnLtqUDg" frameborder="0" allowfullscreen></iframe>
+				</section><!--fin del videoMatadero-->
+				<section id="social">
+					
+				</section>
+				<section id="comentarios">
+					<div id="disqus_thread"></div>
+				    <script type="text/javascript">
+				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				        var disqus_shortname = 'pruebadanyosh'; // required: replace example with your forum shortname
+
+				        /* * * DON'T EDIT BELOW THIS LINE * * */
+				        (function() {
+				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				        })();
+				    </script>
+				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section><!--Fin de comentarios-->
+			</section><!-- Fin de Matadero Single -->
 		</section><!-- Fin del contenido General-->
 
 	</div><!-- Fin del Wrap -->

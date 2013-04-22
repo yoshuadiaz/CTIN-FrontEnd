@@ -171,12 +171,15 @@ img{
 	margin: 20px;
 	text-align: center;
 }
-#listadoMataderos .principal a{
+#mataderos .principal a{
 	text-decoration: none;
 	color:#ccc;
 }
-#listadoMataderos .principal article{
+#mataderos .principal article{
 	padding-top: 30px;
+}
+#mataderoSingle #comentarios{
+	padding: 20px;
 }
 #listadoMataderos .secundarios a{
 	text-decoration: none;
