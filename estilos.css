@@ -5,7 +5,18 @@ body{
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-header{
+header #opciones1{
+	padding: 0;
+	list-style-type: none;
+	display: block;
+}
+header #opciones2{
+	padding: 0;
+	list-style-type: none;
+	display: none;
+}
+#opciones3 {
+	display: none;
 }
 html{
 	background-color: #aaa;
@@ -68,6 +79,19 @@ img{
 }
 #listadoProyectos .Elemento{
 	margin-bottom: 20px;
+}
+#mataderoSingle #socialBar{
+	background-color: #ccc;
+	overflow: hidden;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+}
+#mataderoSingle #socialBar #botones{
+	background-color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+#mataderoSingle #socialBar h3{
+	padding: 15px 0;
 }
 #mataderoSingle .tituloSeccion{
 	text-align: center;
@@ -362,6 +386,12 @@ text-decoration: none;
 }
 /* Large desktop */
 @media (min-width: 1200px) {
+	header #opciones1{
+		display: block;
+	}
+	header #opciones2{
+		display: none;
+	}
 	#contenidoGeneral {
 		padding: 0;
 	}
@@ -379,10 +409,22 @@ text-decoration: none;
 		border-right: 0px;
 		border-right: 1px solid black;
 	}
+	header #opciones1{
+		display: none;
+	}
+	header #opciones2{
+		display: block;
+	}
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+	header #opciones1{
+		display: none;
+	}
+	header #opciones2{
+		display: block;
+	}
 	.Elemento .leyenda h3{
 		margin: 20px 20px;
 		height: auto;
@@ -405,6 +447,19 @@ text-decoration: none;
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	header #opciones1{
+		display: none;
+	}
+	header #opciones2{
+		display: none;
+	}
+	header #opciones3 {
+		display: block;
+		margin: 20px;
+	}
+	header #opciones3 select{
+		width: 100%;
+	}
 	#contenidoGeneral {
 		padding: 0;
 		-webkit-animation: emp;
